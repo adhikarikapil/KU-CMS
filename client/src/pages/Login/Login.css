@@ -182,6 +182,10 @@ body{
     transform: translateX(-200%);
 }
 
+.toggle-left h1 {
+    color: #fff;
+}
+
 .loginContainer.active .toggle-left{
     transform: translateX(0);
 }

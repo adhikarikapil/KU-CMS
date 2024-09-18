@@ -2,7 +2,6 @@
 import "./Login.css";
 
 function Login() {
-    const container = document.getElementById('container')
   return (
     <>
       <div className="loginContainer" id="container">
