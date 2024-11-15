@@ -1,10 +1,13 @@
 import React from "react";
 
 // Images
-import Logo from '/KU-CMS.webp'
+import Logo from "/KU-CMS.webp";
 
 // Styles
 import "./LoginStyles.css";
+
+// Routes
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   return (
@@ -16,7 +19,9 @@ const LoginPage = () => {
             <h2>Teacher Login</h2>
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <button>Login</button>
+            <Link to="/teacher-dashboard">
+              <button>Login</button>
+            </Link>
           </form>
         </div>
         <div className="form-container sign-in">
@@ -25,7 +30,9 @@ const LoginPage = () => {
             <h2>Student Login</h2>
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <button>Login</button>
+            <Link to="/student-dashboard">
+              <button>Login</button>
+            </Link>
           </form>
         </div>
         <div className="toggle-container">
