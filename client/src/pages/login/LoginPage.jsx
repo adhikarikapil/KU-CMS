@@ -10,6 +10,17 @@ import "./LoginStyles.css";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
+
+  const handleTeacherToggle = () => {
+    const container = document.getElementById("container");
+    container.classList.add("active");
+  };
+
+  const handleStudentToggle = () => {
+    const container = document.getElementById("container");
+    container.classList.remove("active");
+  };
+
   return (
     <>
       <div className="loginContainer" id="container">
@@ -45,9 +56,7 @@ const LoginPage = () => {
               </p>
               <button
                 className="hidden"
-                onClick={() => {
-                  container.classList.remove("active");
-                }}
+                onClick={handleStudentToggle}
               >
                 Login as Student
               </button>
@@ -59,14 +68,16 @@ const LoginPage = () => {
               </p>
               <button
                 className="hidden"
-                onClick={() => {
-                  container.classList.add("active");
-                }}
+                onClick={handleTeacherToggle}
               >
                 Login as Teacher
               </button>
             </div>
           </div>
+        </div>
+        <div className="mobile-nav">
+          <button onClick={handleStudentToggle}>Student Login</button>
+          <button onClick={handleTeacherToggle}>Teacher Login</button>
         </div>
       </div>
     </>
