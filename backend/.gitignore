@@ -1,0 +1,5 @@
+myEnv
+db.sqlite3
+db.sqlite3-journal
+*.log
+local_setting.py
