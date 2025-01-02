@@ -10,7 +10,6 @@ import "./LoginStyles.css";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
-
   const handleTeacherToggle = () => {
     const container = document.getElementById("container");
     container.classList.add("active");
@@ -30,9 +29,14 @@ const LoginPage = () => {
             <h2>Teacher Login</h2>
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <Link to="/teacher-dashboard">
-              <button>Login</button>
-            </Link>
+            <div className="button-group">
+              <Link to="/teacher-dashboard">
+                <button>Login</button>
+              </Link>
+              <Link to="/register">
+                <button className="secondary">Register</button>
+              </Link> 
+            </div>
           </form>
         </div>
         <div className="form-container sign-in">
@@ -41,9 +45,14 @@ const LoginPage = () => {
             <h2>Student Login</h2>
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-            <Link to="/student-dashboard">
-              <button>Login</button>
-            </Link>
+            <div className="button-group">
+              <Link to="/student-dashboard">
+                <button>Login</button>
+              </Link>
+              <Link to='/register'>
+                <button className="secondary">Register</button>
+              </Link>
+            </div>
           </form>
         </div>
         <div className="toggle-container">
@@ -54,10 +63,7 @@ const LoginPage = () => {
                 Login your student account to access your courses and
                 assignments.
               </p>
-              <button
-                className="hidden"
-                onClick={handleStudentToggle}
-              >
+              <button className="hidden" onClick={handleStudentToggle}>
                 Login as Student
               </button>
             </div>
@@ -66,10 +72,7 @@ const LoginPage = () => {
               <p>
                 Login your teacher account to manage your classes and students.
               </p>
-              <button
-                className="hidden"
-                onClick={handleTeacherToggle}
-              >
+              <button className="hidden" onClick={handleTeacherToggle}>
                 Login as Teacher
               </button>
             </div>

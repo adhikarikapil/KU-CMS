@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const TeacherDashboard = () => {
   return (
-    <>
+    <> 
       {/* Header Section */}
       <header className="header">
         <img src={Logo} alt="KU-CMS Logo" className="logo"></img>
@@ -20,7 +20,7 @@ const TeacherDashboard = () => {
 
       {/* Navbar Section */}
       <nav className="navbar">
-        <Link to="/notes">Notes</Link>
+        <Link to="/teacher-notes">Upload Notes</Link>
         <Link to="/assignments">Assignments</Link>
         <Link to="/grade">Grade</Link>
         <Link to="/notices">Notices</Link>
@@ -34,19 +34,19 @@ const TeacherDashboard = () => {
 
       {/* Dashboard Section */}
       <section className="dashboard">
-        <Link to="/notes">
+        <Link to="/teacher-notes">
           <div className="card">
-            <h3>Notes</h3>
+            <h3>Upload Notes</h3>
             <p>Manage Notes for students.</p>
           </div>
         </Link>
-        <Link to="/notes">
+        <Link to="/assignments">
           <div className="card">
             <h3>Assignments</h3>
             <p>Grade Assignments and give feedback</p>
           </div>
         </Link>
-        <Link to="/notes">
+        <Link to="/notice">
           <div className="card">
             <h3>Notices</h3>
             <p>Give important notices to your students.</p>

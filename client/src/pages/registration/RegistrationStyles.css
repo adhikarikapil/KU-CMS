@@ -1,31 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
-body {
-  background-color: #c9d6ff;
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.logo {
-    margin: 0;
-    padding: 0;
-    width: 220px;
-    height: auto;
-    border-radius: 30px;
-}
-
-.loginContainer {
+.registerContainer {
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -33,15 +8,16 @@ body {
   overflow: hidden;
   width: 768px;
   max-width: 100%;
-  min-height: 480px;
+  min-height: 580px;
 }
 
-.loginContainer h2 {
-  font-size: 2rem;
+.registerContainer h2 {
+  font-size: 1.2rem;
   color: #000000;
+  margin-bottom: 10px;
 }
 
-.loginContainer button {
+.registerContainer button {
   background-color: #512da8;
   color: #fff;
   font-size: 12px;
@@ -55,12 +31,17 @@ body {
   cursor: pointer;
 }
 
-.loginContainer button.hidden {
+.registerContainer button.secondary {
+  background-color: #512da8;
+  margin-left: 10px;
+}
+
+.registerContainer button.hidden {
   background-color: transparent;
   border-color: #fff;
 }
 
-.loginContainer form {
+.registerContainer form {
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -70,7 +51,7 @@ body {
   height: 100%;
 }
 
-.loginContainer input {
+.registerContainer input {
   background-color: #eee;
   border: none;
   margin: 8px 0;
@@ -80,6 +61,16 @@ body {
   width: 100%;
   outline: none;
   color: #000000;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.logo{
+  width:168px;
 }
 
 .form-container {
@@ -95,7 +86,7 @@ body {
   z-index: 2;
 }
 
-.loginContainer.active .sign-in {
+.registerContainer.active .sign-in {
   transform: translateX(100%);
 }
 
@@ -106,7 +97,7 @@ body {
   z-index: 1;
 }
 
-.loginContainer.active .sign-up {
+.registerContainer.active .sign-up {
   transform: translateX(100%);
   opacity: 1;
   z-index: 5;
@@ -126,21 +117,6 @@ body {
   }
 }
 
-.social-icons {
-  margin: 20px 0;
-}
-
-.social-icons a {
-  border: 1px solid #ccc;
-  border-radius: 20%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 3px;
-  width: 40px;
-  height: 40px;
-}
-
 .toggle-container {
   position: absolute;
   top: 0;
@@ -153,7 +129,7 @@ body {
   z-index: 1000;
 }
 
-.loginContainer.active .toggle-container {
+.registerContainer.active .toggle-container {
   transform: translateX(-100%);
   border-radius: 0 150px 100px 0;
 }
@@ -171,7 +147,7 @@ body {
   transition: all 0.6s ease-in-out;
 }
 
-.loginContainer.active .toggle {
+.registerContainer.active .toggle {
   transform: translateX(50%);
 }
 
@@ -198,7 +174,7 @@ body {
   color: #fff;
 }
 
-.loginContainer.active .toggle-left {
+.registerContainer.active .toggle-left {
   transform: translateX(0);
 }
 
@@ -211,74 +187,24 @@ body {
   color: #fff;
 }
 
-.loginContainer.active .toggle-right {
+.registerContainer.active .toggle-right {
   transform: translateX(200%);
 }
 
-.mobile-nav {
-  display: none;
-}
-
-.button-group {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.loginContainer button.secondary {
-  background-color: #512da8;
-}
-
-.register-link {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #666;
-}
-
-.register-link a {
-  color: #512da8;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.register-link a:hover {
-  text-decoration: underline;
-}
-
-/* ADD THESE COMPLETE SECTIONS AT THE END OF YOUR CSS FILE */
-
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
-  body {
-    padding: 20px;
-  }
-
-  .loginContainer {
-    min-height: 400px;
+  .registerContainer {
+    min-height: 500px;
     width: 100%;
   }
 
-  .logo {
-    width: 160px;
-  }
-
-  .loginContainer h2 {
-    font-size: 1.5rem;
-  }
-
-  .loginContainer form {
-    padding: 0 20px;
-  }
-
-  /* Hide the toggle container on mobile */
   .toggle-container {
     display: none;
   }
 
-  /* Adjust form containers */
   .form-container {
     width: 100%;
     position: relative;
-    transition: all 0.6s ease-in-out;
   }
 
   .sign-in, .sign-up {
@@ -290,12 +216,12 @@ body {
     display: none;
   }
 
-  .loginContainer.active .sign-up {
+  .registerContainer.active .sign-up {
     display: block;
     transform: none;
   }
 
-  .loginContainer.active .sign-in {
+  .registerContainer.active .sign-in {
     display: none;
   }
 
@@ -310,52 +236,35 @@ body {
     border-top: 1px solid #ddd;
   }
 
-  .mobile-nav button {
-    background-color: #512da8;
-    color: white;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  .button-group {
+    flex-direction: column;
+    width: 100%;
   }
 
-  .mobile-nav button:hover {
-    background-color: #3f1f8c;
+  .button-group button {
+    width: 100%;
+    margin: 5px 0;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .loginContainer {
-    min-height: 350px;
+  .registerContainer {
+    min-height: 450px;
     border-radius: 20px;
   }
 
-  .logo {
-    width: 120px;
-  }
-
-  .loginContainer h2 {
+  .registerContainer h2 {
     font-size: 1.2rem;
   }
 
-  .loginContainer input {
+  .registerContainer input {
     padding: 8px 12px;
     font-size: 12px;
   }
 
-  .loginContainer button {
+  .registerContainer button {
     padding: 8px 30px;
     font-size: 11px;
-  }
-
-  .loginContainer form {
-    padding: 0 15px;
-  }
-
-  .mobile-nav {
-    padding: 10px;
   }
 
   .mobile-nav button {
