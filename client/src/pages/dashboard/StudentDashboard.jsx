@@ -22,9 +22,9 @@ const StudentDashboard = () => {
         {/* NavBar Section */}
         <nav className="navbar">
           <Link to="/notes">Notes</Link>
-          <Link to="/notes">Assignments</Link>
-          <Link to="/notes">Grade</Link>
-          <Link to="/notes">Notice</Link>
+          <Link to="/assignments">Assignments</Link>
+          <Link to="/grade">Grade</Link>
+          <Link to="/notice">Notice</Link>
         </nav>
 
         {/* Welcome Messages */}
@@ -41,13 +41,13 @@ const StudentDashboard = () => {
               <p>View all your Notes.</p>
             </div>
           </Link>
-          <Link to="/notes">
+          <Link to="/assignments">
             <div className="card">
               <h3>My Assignments</h3>
               <p>Check your all Assignments.</p>
             </div>
           </Link>
-          <Link to="/notes">
+          <Link to="/notice">
             <div className="card">
               <h3>My Notice</h3>
               <p>Stay updated with your recent Notices.</p>

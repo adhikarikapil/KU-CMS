@@ -21,9 +21,9 @@ const TeacherDashboard = () => {
       {/* Navbar Section */}
       <nav className="navbar">
         <Link to="/notes">Notes</Link>
-        <Link to="/notes">Assignments</Link>
-        <Link to="/notes">Grade</Link>
-        <Link to="/notes">Notices</Link>
+        <Link to="/assignments">Assignments</Link>
+        <Link to="/grade">Grade</Link>
+        <Link to="/notices">Notices</Link>
       </nav>
 
       {/* Welcome Section */}
