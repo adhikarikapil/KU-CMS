@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
     'rest_framework',
-    'corsheader'
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGIN = [
     'http://localhost:5173',
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 ROOT_URLCONF = 'KU_CMS.urls'
 
@@ -82,8 +85,12 @@ WSGI_APPLICATION = 'KU_CMS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'KU_CMS',
+        'USER': 'ku-cms',
+        'PASSWORD': 'kucms',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
