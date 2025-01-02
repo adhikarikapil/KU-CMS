@@ -42,22 +42,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
-    def has_perm(self, perm, obj=None):
-        return self.is_superuser
-
-    def has_module_perms(self, app_label):
-        return self.is_superuser
-
-    def get_group_permissions(self):
-        return set()
-
-    def get_all_permissions(self):
-        permissions = set()
-        if self.is_superuser:
-            permissions.add("admin")
-        return permissions
-
-
     objects = CustomUserManager()
 
     USERNAME_FIELD = "email"
