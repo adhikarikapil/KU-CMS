@@ -1,0 +1,17 @@
+MyEnv
+db.sqlite3
+db.sqlite3-journal
+*.log
+local_setting.py
+
+__pycache__/
+*.pyc
+
+migrations/
+
+KU_CMS/__pycache__/
+KU_CMS/*.pyc
+
+users/__pycache__/
+users/*.pyc
+users/migrations/
